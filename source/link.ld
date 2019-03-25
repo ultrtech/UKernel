@@ -1,5 +1,5 @@
 /*
-*  link.ld
+*  linker script
 */
 OUTPUT_FORMAT(elf32-i386)
 ENTRY(start)
