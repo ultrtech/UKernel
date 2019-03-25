@@ -7,6 +7,6 @@ screen.o : source/screen.c
 boot.o : source/boot.asm
 	nasm -f elf32 source/boot.asm -o out/boot.o
 clean :
-	rm out/* && rm build/*
+	rm out/*.o && rm build/*.out
 test :
 	qemu-system-i386 -kernel build/ukernel.out -curses
