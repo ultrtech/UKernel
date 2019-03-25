@@ -9,11 +9,10 @@ const char *kernelVersion = "v0.01 Alpha";   // define kernel version
 
 void kernel_exit_handler(void)
 {
-    const char *bracket1 = "[";
+    const char *bracket1 = "\n[";
     const char *bracket2 = "] ";
     const char *infosign = "INFO";
     const char *exitmsg = "Kernel code execution finished, halt";
-    kprint_newline();
     kprint(bracket1);
     kprintcolored(infosign, CHAR_FG_LIGHTGREEN);
     kprint(bracket2);
@@ -30,7 +29,7 @@ void kmain(void)
     kprint(kernelName);
     kprint(" "); // space between kernel name and version
     kprint(kernelVersion);
-    kprint_newline();
+    kprint("\n");
     /*
     TODO: Add functionality
     */
