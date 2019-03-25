@@ -5,9 +5,10 @@ execution of the kernel begins and ends here
 #include "include/charcolors.h"
 
 const char *kernelName = "Ultranium Kernel"; // define kernel name
-const char *kernelVersion = "v0.01 Alpha"; // define kernel version
+const char *kernelVersion = "v0.01 Alpha";   // define kernel version
 
-void kernel_exit_handler(void) {
+void kernel_exit_handler(void)
+{
     const char *bracket1 = "[";
     const char *bracket2 = "] ";
     const char *infosign = "INFO";
@@ -15,7 +16,7 @@ void kernel_exit_handler(void) {
     kprint_newline();
     kprint(bracket1);
     kprintcolored(infosign, CHAR_FG_LIGHTGREEN);
-    kprint (bracket2);
+    kprint(bracket2);
     kprint(exitmsg);
     return;
     /*
@@ -25,7 +26,7 @@ void kernel_exit_handler(void) {
 
 void kmain(void)
 {
-	clear_screen();
+    clear_screen();
     kprint(kernelName);
     kprint(" "); // space between kernel name and version
     kprint(kernelVersion);
@@ -34,5 +35,5 @@ void kmain(void)
     TODO: Add functionality
     */
     kernel_exit_handler(); // call on-exit procedure
-	return;
+    return;
 }
