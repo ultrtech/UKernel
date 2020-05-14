@@ -1,4 +1,4 @@
-bits 32 ;; 32-bit
+bits 32 ;; Specify 32 bit mode to NASM
 section .text
         align 4
         dd 0x1BADB002            ;magic value
@@ -9,11 +9,11 @@ global start
 extern kmain
 
 start:
-  cli 			; disable interrupts
-  mov esp, stack_space	; set stack pointer
-  call kmain
-  hlt		 	; disable CPU after kernel exit
+  cli ; disable interrupts
+  mov esp, stack_space ; set stack pointer
+  call kmain ; call main kernel function
+  hlt ; disable CPU after kernel exit
 
 section .bss
-resb 8192		; 8KB of stack space
+resb 8192 ; reserve 8KB for stack space
 stack_space:
